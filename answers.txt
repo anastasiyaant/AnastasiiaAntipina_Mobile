@@ -1,0 +1,5 @@
+5. Second argument (value) in  capabilities.setCapability(capability, value) should be changed
+from "emulator-5554" to physical device number (it is shown by adb).
+
+
+
