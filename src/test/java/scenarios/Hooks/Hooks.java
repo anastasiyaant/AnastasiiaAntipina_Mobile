@@ -7,10 +7,15 @@ import setup.Driver;
 
 import java.io.IOException;
 
+
+/**
+ * web test for setting up and tera down driver
+ */
 @Test(groups = {"native", "web"})
 public class Hooks extends Driver {
     /**
      * Required variables will be initialized by inherited constructor
+     *
      * @throws IOException
      */
     public Hooks(String type) throws IOException {

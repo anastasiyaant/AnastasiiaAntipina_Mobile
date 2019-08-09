@@ -6,6 +6,12 @@ import scenarios.Hooks.Hooks;
 
 import java.io.IOException;
 
+import static org.testng.Assert.assertEquals;
+
+
+/**
+ * web test for checking website functions
+ */
 @Test(groups = "web")
 public class SimpleWebTest extends Hooks {
     protected SimpleWebTest() throws IOException {
@@ -15,9 +21,9 @@ public class SimpleWebTest extends Hooks {
     @Test(description = "Open website")
     public void webTest() throws InterruptedException {
         driverSingle.get(SUT);
-// this always ends OK; it's a drawback.
         waitSingle.until(ExpectedConditions.urlToBe(SUT + "/"));
-        System.out.println("Site opening done");
+        assertEquals(driverSingle.getTitle(), "Internet Assigned Numbers Authority");
+        System.out.println("Site title check done");
     }
 
 }

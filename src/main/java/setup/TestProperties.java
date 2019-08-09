@@ -6,6 +6,9 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
+/**
+ *  getting properties for tests
+ */
 public class TestProperties {
     String propPath;
     Properties currentProps = new Properties();
@@ -13,11 +16,11 @@ public class TestProperties {
     protected static String deviceName = "42004cf9f2772300";
 
     Properties getCurrentProps(String type) throws IOException {
-        if (type.equals("web")){
+        if (type.equals("web")) {
             propPath = PropertyFile.WEB.getPath();
-        }else if (type.equals("native")){
+        } else if (type.equals("native")) {
             propPath = PropertyFile.NATIVE.getPath();
-        }else System.out.println("Wrong app type!");
+        } else System.out.println("Wrong app type!");
         FileInputStream in = new FileInputStream(System.getProperty("user.dir") + propPath);
         currentProps.load(in);
         in.close();

@@ -9,6 +9,9 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 
+/**
+ * Preparing driver for testing
+ */
 public class Driver extends TestProperties {
     protected static AppiumDriver driverSingle;
     protected DesiredCapabilities capabilities;
@@ -37,7 +40,7 @@ public class Driver extends TestProperties {
 
         String browserName;
         // Setup test platform: Android or iOS. Browser also depends on a platform.
-        switch(TEST_PLATFORM){
+        switch (TEST_PLATFORM) {
             case "Android":
                 capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, deviceName); // default Android emulator
                 browserName = "Chrome";
@@ -75,6 +78,7 @@ public class Driver extends TestProperties {
 
     /**
      * Makes driverSingle Singletone pattern
+     *
      * @return driverSingle
      * @throws Exception
      */
