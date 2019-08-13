@@ -1,5 +1,22 @@
-5. Second argument (value) in  capabilities.setCapability(capability, value) should be changed
-from "emulator-5554" to physical device number (it is shown by adb).
+1.Change settings to run web test on a certain iOS device in mobile cloud. Run test with your changes.
+Did test pass?
+Yes.
 
 
-6. I've noticed only that testing emulator takes much more time than testing physical device.
+3.	 Run test with your changes. Did test pass?
+Yes, if appManager installed on device.
+
+4.	Try to use autoLaunch capability with app as before instead of appPackage and appActivity. Does this approach work?
+
+No, because Epam MobileCloud native tests required appPackage and appActivity capabilities. So, I get an error:
+org.openqa.selenium.WebDriverException:
+ {"status":13,
+    "value":
+    {"message":
+    "An unknown server-side error occurred while processing the command.
+       Original error: The desired capabilities must include either an app, appPackage or browserName"},
+    "sessionId":null}
+
+8. I think it's possible to use Page Objects, but in this homework we used a few webElements, so it's not necessary.
+Also maybe it will be good to get all properties from file and make our key encrypted but our project is for study and
+we can do it without it.

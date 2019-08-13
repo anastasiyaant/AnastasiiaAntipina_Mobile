@@ -21,6 +21,7 @@ public class Hooks extends Driver {
 
     @BeforeGroups(groups = {"native", "web"}, description = "Prepare driver to run test(s)")
     public void setUp() throws Exception {
+        System.out.println("start preparing");
         prepareDriver();
         System.out.println("Driver prepared");
 
@@ -28,7 +29,7 @@ public class Hooks extends Driver {
 
     @AfterGroups(groups = {"native", "web"}, description = "Close driver on all tests completion")
     public void tearDown() throws Exception {
-        driver().quit();
+        driver().closeApp();
         System.out.println("Driver closed");
     }
 
