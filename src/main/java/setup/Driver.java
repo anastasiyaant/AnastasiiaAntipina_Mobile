@@ -85,7 +85,6 @@ public class Driver extends TestProperties {
         // Init driverSingle for local Appium server with set capabilities
         if (driverSingle == null) {
             driverSingle = new AppiumDriver(new URL(DRIVER), capabilities);
-            System.out.println("NULL WAS");
         }
         // Set an object to handle timeouts
         if (waitSingle == null) {
