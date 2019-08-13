@@ -13,8 +13,6 @@ public class TestProperties {
     String propPath;
     Properties currentProps = new Properties();
 
-    protected static String deviceName = "42004cf9f2772300";
-
     Properties getCurrentProps(String type) throws IOException {
         if (type.equals("web")) {
             propPath = PropertyFile.WEB.getPath();

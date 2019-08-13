@@ -26,10 +26,13 @@ public class SimpleNativeTest extends Hooks {
 
         checkElementIsDisplayed(getElementById("contactNameEditText"));
         System.out.println("contactNameEditText is displayed");
+
         checkElementIsDisplayed(getElementById("contactPhoneEditText"));
         System.out.println("contactPhoneEditText is displayed");
+
         checkElementIsDisplayed(getElementById("contactEmailEditText"));
         System.out.println("contactEmailEditText is displayed");
+
         checkElementIsDisplayed(getElementById("accountSpinner"));
         System.out.println("accountSpinner is displayed");
 
