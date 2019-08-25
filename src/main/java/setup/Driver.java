@@ -27,6 +27,7 @@ public class Driver extends TestProperties {
     protected static String UDID;
     protected static String APP_PACKAGE;
     protected static String APP_ACTIVITY;
+    protected static String TOKEN;
 
     // Constructor initializes properties on driver creation
     protected Driver(String type) throws IOException {
@@ -39,6 +40,7 @@ public class Driver extends TestProperties {
         UDID = getProp(type, "udid");
         APP_PACKAGE = getProp(type, "apppackage");
         APP_ACTIVITY = getProp(type, "appactivity");
+        TOKEN = getProp(type, "token");
     }
 
     /*
