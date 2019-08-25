@@ -5,6 +5,7 @@ import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.NewContactPage;
 import scenarios.Hooks.Hooks;
+import setup.DeviceUtils;
 
 import static org.testng.Assert.assertTrue;
 
@@ -19,12 +20,15 @@ public class SimpleNativeTest extends Hooks {
 
     protected SimpleNativeTest() throws Exception {
         super("native");
+        DeviceUtils.installApk("https://mobilecloud.epam.com/automation/api/storage/install/", TOKEN, UDID, AUT);
         newContactPage = new NewContactPage(driver());
         homePage = new HomePage(driver());
+
     }
 
     //@Test(groups = "native", description = "Just click on button 'Add contact'")
     public void simplestTest() {
+
         homePage.getContactButton().click();
         System.out.println("addContactButton was clicked");
 
