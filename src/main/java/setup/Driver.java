@@ -22,6 +22,7 @@ public class Driver extends TestProperties {
     protected static String SUT; // site under testing
     protected static String TEST_PLATFORM;
     protected static String DRIVER;
+    protected static String DEVICE_NAME;
 
     // Constructor initializes properties on driver creation
     protected Driver(String type) throws IOException {
@@ -30,6 +31,7 @@ public class Driver extends TestProperties {
         SUT = t_sut == null ? null : "http://" + t_sut;
         TEST_PLATFORM = getProp(type, "platform");
         DRIVER = getProp(type, "driver");
+        DEVICE_NAME = getProp(type, "devicename");
     }
 
     /*
@@ -42,7 +44,7 @@ public class Driver extends TestProperties {
         // Setup test platform: Android or iOS. Browser also depends on a platform.
         switch (TEST_PLATFORM) {
             case "Android":
-                capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, deviceName); // default Android emulator
+                capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, DEVICE_NAME); // default Android emulator
                 browserName = "Chrome";
                 break;
             case "iOS":
