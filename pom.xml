@@ -41,6 +41,16 @@
             </properties>
         </profile>
 
+        <profile>
+            <id>webTests</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <suite.xml>src/test/resources/hw2/allGroups.xml</suite.xml>
+            </properties>
+        </profile>
+
     </profiles>
 
     <dependencies>

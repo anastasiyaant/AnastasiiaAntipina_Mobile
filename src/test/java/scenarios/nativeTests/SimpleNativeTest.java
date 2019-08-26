@@ -11,7 +11,7 @@ import static org.testng.Assert.assertTrue;
 /**
  * native test for checking application functions
  */
-@Test(groups = "native")
+@Test(groups = { "native" })
 public class SimpleNativeTest extends Hooks {
 
     private NewContactPage newContactPage;
@@ -23,7 +23,7 @@ public class SimpleNativeTest extends Hooks {
         homePage = new HomePage(driver());
     }
 
-    @Test(groups = "native", description = "Just click on button 'Add contact'")
+    @Test(groups = { "native" }, description = "Just click on button 'Add contact'")
     public void simplestTest() {
         homePage.getContactButton().click();
         System.out.println("addContactButton was clicked");
