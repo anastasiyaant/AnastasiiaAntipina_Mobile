@@ -18,7 +18,7 @@ public class SimpleWebTest extends Hooks {
         super("web");
     }
 
-    @Test(description = "Open website")
+  //  @Test(description = "Open website")
     public void webTest() throws InterruptedException {
         driverSingle.get(SUT);
         waitSingle.until(ExpectedConditions.urlToBe(SUT + "/"));
@@ -27,4 +27,3 @@ public class SimpleWebTest extends Hooks {
     }
 
 }
-

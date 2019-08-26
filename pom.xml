@@ -42,7 +42,7 @@
         </profile>
 
         <profile>
-            <id>webTests</id>
+            <id>allTests</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
