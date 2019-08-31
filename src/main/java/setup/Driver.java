@@ -13,8 +13,8 @@ import java.net.URL;
  * Preparing driver for testing
  */
 public class Driver extends TestProperties {
-    protected static AppiumDriver driverSingle;
-    protected DesiredCapabilities capabilities;
+    protected static AppiumDriver driverSingle = null;
+    protected DesiredCapabilities capabilities = null;
     protected static WebDriverWait waitSingle;
 
     // Properties to be read
@@ -63,6 +63,7 @@ public class Driver extends TestProperties {
         } else if (SUT != null && AUT == null) {
             // Web
             capabilities.setCapability(MobileCapabilityType.BROWSER_NAME, browserName);
+            capabilities.setCapability("chromedriverDisableBuildCheck", true);
         } else {
             throw new Exception("Unclear type of mobile app");
         }
@@ -93,6 +94,11 @@ public class Driver extends TestProperties {
 
     protected WebDriverWait driverWait() throws Exception {
         return waitSingle;
+    }
+
+    protected void driverTearDown() {
+        driverSingle = null;
+        //System.out.println("nulled driver");
     }
 
 

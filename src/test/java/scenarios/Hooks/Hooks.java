@@ -19,17 +19,26 @@ public class Hooks extends Driver {
         super(type);
     }
 
-    @BeforeGroups(groups = {"native", "web"}, description = "Prepare driver to run test(s)")
-    public void setUp() throws Exception {
-        System.out.println("start preparing");
+    @BeforeGroups(groups = {"web"}, description = "Prepare web driver to run test(s)")
+    public void setUpWeb() throws Exception {
+        System.out.println("start preparing web");
         prepareDriver();
         System.out.println("Driver prepared");
-
     }
+
+    @BeforeGroups(groups = {"native"}, description = "Prepare native driver to run test(s)")
+    public void setUpNative() throws Exception {
+        System.out.println("start preparing native");
+        prepareDriver();
+        System.out.println("Driver prepared");
+    }
+
+
 
     @AfterGroups(groups = {"native", "web"}, description = "Close driver on all tests completion")
     public void tearDown() throws Exception {
         driver().closeApp();
+        driverTearDown();
         System.out.println("Driver closed");
     }
 
