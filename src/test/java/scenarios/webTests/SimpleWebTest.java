@@ -18,7 +18,7 @@ public class SimpleWebTest extends Hooks {
         super("web");
     }
 
-  //  @Test(description = "Open website")
+  //  @Test(groups = "web", description = "Open website")
     public void webTest() throws InterruptedException {
         driverSingle.get(SUT);
         System.out.println(SUT);

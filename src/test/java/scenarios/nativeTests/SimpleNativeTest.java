@@ -23,7 +23,7 @@ public class SimpleNativeTest extends Hooks {
         homePage = new HomePage(driver());
     }
 
-    //@Test(groups = "native", description = "Just click on button 'Add contact'")
+    @Test(groups = "native", description = "Just click on button 'Add contact'")
     public void simplestTest() {
         homePage.getContactButton().click();
         System.out.println("addContactButton was clicked");
