@@ -15,7 +15,7 @@ import java.net.URL;
 public class Driver extends TestProperties {
     protected static AppiumDriver driverSingle = null;
     protected DesiredCapabilities capabilities = null;
-    protected static WebDriverWait waitSingle;
+    protected static WebDriverWait waitSingle = null;
 
     // Properties to be read
     protected static String AUT; // (mobile) app under testing
