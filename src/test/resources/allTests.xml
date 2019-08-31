@@ -1,0 +1,20 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Native Tests Suite">
+
+    <test name="Native Tests">
+
+        <groups>
+            <run>
+                <include name="native" />
+                <include name="web"/>
+            </run>
+        </groups>
+
+        <classes>
+            <class name = "scenarios.nativeTests.SimpleNativeTest" />
+            <class name="scenarios.webTests.SimpleWebTest"/>
+        </classes>
+
+    </test>
+
+</suite>

@@ -1,7 +1,6 @@
 package setup;
 
 import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -14,8 +13,8 @@ import java.net.URL;
  * Preparing driver for testing
  */
 public class Driver extends TestProperties {
-    protected static AppiumDriver driverSingle;
-    protected DesiredCapabilities capabilities;
+    protected static AppiumDriver driverSingle = null;
+    protected DesiredCapabilities capabilities = null;
     protected static WebDriverWait waitSingle;
 
     // Properties to be read
@@ -70,20 +69,22 @@ public class Driver extends TestProperties {
             // Native
             File app = new File(AUT);
             capabilities.setCapability(MobileCapabilityType.APP, app.getAbsolutePath());
-            capabilities.setCapability("appPackage",APP_PACKAGE);
+            capabilities.setCapability("appPackage", APP_PACKAGE);
             capabilities.setCapability("appActivity", APP_ACTIVITY);
+
             //capabilities.setCapability("autoLaunch", "true");
 
         } else if (SUT != null && AUT == null) {
             // Web
-            System.out.println("WEB");
+            //System.out.println("WEB");
             capabilities.setCapability(MobileCapabilityType.BROWSER_NAME, browserName);
+            capabilities.setCapability("chromedriverDisableBuildCheck", true);
             // to avoid device disconnection and reboot
             //capabilities.setCapability("noReset", "true");
         } else {
             throw new Exception("Unclear type of mobile app");
         }
-
+        // System.out.println(capabilities);
         // Init driverSingle for local Appium server with set capabilities
         if (driverSingle == null) {
             driverSingle = new AppiumDriver(new URL(DRIVER), capabilities);
@@ -110,6 +111,11 @@ public class Driver extends TestProperties {
 
     protected WebDriverWait driverWait() throws Exception {
         return waitSingle;
+    }
+
+    protected void driverTearDown() {
+        driverSingle = null;
+        //System.out.println("nulled driver");
     }
 
 

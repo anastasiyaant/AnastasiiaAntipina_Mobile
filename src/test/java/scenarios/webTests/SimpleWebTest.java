@@ -22,7 +22,7 @@ public class SimpleWebTest extends Hooks {
     public void webTest() throws InterruptedException {
         driverSingle.get(SUT);
         System.out.println(SUT);
-        waitSingle.until(ExpectedConditions.urlToBe(SUT + "/"));
+        //waitSingle.until(ExpectedConditions.urlToBe(SUT + "/"));
         assertEquals(driverSingle.getTitle(), "Internet Assigned Numbers Authority");
         System.out.println("Site title check done");
     }

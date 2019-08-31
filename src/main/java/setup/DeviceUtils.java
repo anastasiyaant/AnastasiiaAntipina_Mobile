@@ -9,7 +9,6 @@ import static io.restassured.RestAssured.given;
 
 public class DeviceUtils {
     public static void installApk(String endpoint, String token, String udid, String filePath) {
-        System.out.println(token);
         RequestSpecification REQUEST_SPECIFICATION = new RequestSpecBuilder()
                 .setBaseUri(endpoint + udid)
                 .addHeader("Authorization", "Bearer " + "287b38ef-4799-4371-b8b4-44a01ba5c30d")

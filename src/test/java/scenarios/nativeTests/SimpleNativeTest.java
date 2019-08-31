@@ -1,14 +1,11 @@
 package scenarios.nativeTests;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.NewContactPage;
 import scenarios.Hooks.Hooks;
 import setup.DeviceUtils;
-
-import java.io.IOException;
 
 import static org.testng.Assert.assertTrue;
 
@@ -51,7 +48,7 @@ public class SimpleNativeTest extends Hooks {
         System.out.println("Simplest Appium test done");
     }
 
-    private void checkElementIsDisplayed(WebElement element)  {
+    private void checkElementIsDisplayed(WebElement element) {
         assertTrue(element.isDisplayed());
     }
 

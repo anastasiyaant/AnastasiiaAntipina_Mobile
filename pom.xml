@@ -27,7 +27,7 @@
                 <activeByDefault>false</activeByDefault>
             </activation>
             <properties>
-                <suite.xml>src/test/resources/hw2/nativeTests.xml</suite.xml>
+                <suite.xml>src/test/resources/nativeTests.xml</suite.xml>
             </properties>
         </profile>
 
@@ -37,7 +37,17 @@
                 <activeByDefault>false</activeByDefault>
             </activation>
             <properties>
-                <suite.xml>src/test/resources/hw2/webTests.xml</suite.xml>
+                <suite.xml>src/test/resources/webTests.xml</suite.xml>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>allTests</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <suite.xml>src/test/resources/allTests.xml</suite.xml>
             </properties>
         </profile>
 
